@@ -1730,13 +1730,13 @@
     const payNum = document.getElementById('pay-num').value.trim();
     const amount = parseFloat(document.getElementById('amount').value);
 
-    if (!network || !notifNum || !payNum || !amount || amount < 50) {
-      alert('Please fill in all fields correctly. Minimum amount is KES 50.');
+    if (!network || !notifNum || !payNum || !amount || amount < 0) {
+      alert('Please fill in all fields correctly. Minimum amount is KES 0.');
       return;
     }
 
-    if (amount > 20000) {
-      alert('Maximum order amount is KES 20,000. For larger amounts, please use the Bulk Orders option.');
+    if (amount > 10000) {
+      alert('Maximum order amount is KES 10,000. For larger amounts, please use the Bulk Orders option.');
       return;
     }
 
