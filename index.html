@@ -1535,7 +1535,7 @@
 
       <div>
         <h3 style="font-family:'Fraunces',serif; font-weight:700; font-size:1rem; color:#e8f5e9; margin-bottom:8px; display:flex; align-items:center; gap:8px;"><span style="color:#00c853;">06.</span> Minimum & Maximum Orders</h3>
-        <p>The minimum order amount is <strong style="color:#00c853;">KES 50</strong> worth of airtime (you pay KES 43). There is no fixed maximum for individual orders. For bulk orders above KES 5,000, please contact us directly on WhatsApp to arrange processing and applicable bulk rates.</p>
+        <p>The minimum order amount is <strong style="color:#00c853;">KES 1</strong> worth of airtime (you pay KES 1). There is no fixed maximum for individual orders. For bulk orders above KES 5,000, please contact us directly on WhatsApp to arrange processing and applicable bulk rates.</p>
       </div>
 
       <div>
@@ -1729,8 +1729,8 @@
     const payNum = document.getElementById('pay-num').value.trim();
     const amount = parseFloat(document.getElementById('amount').value);
 
-    if (!network || !notifNum || !payNum || !amount || amount < 50) {
-      alert('Please fill in all fields correctly. Minimum amount is KES 50.');
+    if (!network || !notifNum || !payNum || !amount || amount < 1) {
+      alert('Please fill in all fields correctly. Minimum amount is KES 1.');
       return;
     }
 
