@@ -1661,7 +1661,7 @@
   // Matches current GitHub: app.use("/mpesa", stkPushRoutes) + router.post("/stk-push")
   const STK_API_URL = 'https://webazi-digital-solutions.onrender.com/mpesa/stk-push';
   const ORDER_STATUS_URL = 'https://webazi-digital-solutions.onrender.com/mpesa/stk-query';
-  const STK_API_KEY = 'WebaziPackson2026!';
+  // Public checkout/status endpoints are rate-limited server-side; no API secret belongs in this page.
 
   function showModalState(state) {
     document.getElementById('modal-state-loading').style.display = state === 'loading' ? 'block' : 'none';
@@ -1756,9 +1756,10 @@
     try {
       const res = await fetch(STK_API_URL, {
         method: 'POST',
+        credentials: 'omit',
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key': STK_API_KEY
+          'Accept': 'application/json'
         },
         body: JSON.stringify({
           phone: payNum,
@@ -1912,9 +1913,10 @@
       if (checkoutId) {
         const res = await fetch(ORDER_STATUS_URL, {
           method: 'POST',
+          credentials: 'omit',
           headers: {
             'Content-Type': 'application/json',
-            'x-api-key': STK_API_KEY
+            'Accept': 'application/json'
           },
           body: JSON.stringify({ checkoutRequestId: checkoutId })
         });
